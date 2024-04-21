@@ -42,6 +42,10 @@ header ul {
 .nav-links li a {
   text-decoration: none;
   color: var(--white-color);
+  position: relative;
+}
+.nav-links li a:hover {
+  color: var(--yellow-dark);
 }
 .menu-icon {
   display: none;
@@ -61,6 +65,9 @@ header ul {
     position: absolute;
     transition: 0.4s;
     right: 0;
+    opacity: 0.69;
+
+    background: #000000;
   }
   ul li {
     padding: 1rem 5rem;
@@ -186,6 +193,7 @@ header ul {
   height: 90%;
   border-radius: 0;
   z-index: -1;
+  transition: 1s;
 }
 
 .latest-news .title p {
@@ -261,7 +269,32 @@ ol {
   margin-top: 2rem;
   text-align: center;
 }
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
+  .ranked .winner {
+    justify-content: center;
+  }
+
+  .ranked .winner > div {
+    width: 100%; 
+    display: none; 
+  }
+
+  .ranked .winner > div:first-child {
+    display: block; 
+  }
+} */
+.slider {
+  display: none;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .ranked .winner > div {
+    display: none;
+  }
+  .slider {
+    display: block;
+  }
 }
 .ranked .winner {
   display: flex;
@@ -272,12 +305,7 @@ ol {
 .ranked .winner > div {
   width: 30%;
 }
-@media (max-width: 768px) {
-  /* .winner{
-    justify-content:center;
-    align-items: center; */
-  /* } */
-}
+
 .ranked .winner .image {
   width: 100%;
   height: 10rem;
@@ -287,11 +315,17 @@ ol {
   height: 12rem;
 }
 
-.ranked .winner .image img {
+.ranked .winner .image img,
+.slider img {
   width: 100%;
   height: 100%;
   border-radius: 8px;
 }
+/* {
+  width: 6rem;
+  height: 100%;
+  border-radius: 8px;
+} */
 .ranked .winner .name {
   text-align: center;
   width: 60%;
