@@ -24,3 +24,16 @@ function showSlides() {
   slides[slideIndex - 1].style.display = "block";
   setTimeout(showSlides, 3000);
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const indicators = document.querySelectorAll(".carousel-indicators li");
+  const cards = document.querySelectorAll(".card-container .card");
+
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener("click", function () {
+      indicators.forEach((ind) => ind.classList.remove("active"));
+      cards.forEach((card) => (card.style.display = "none"));
+      this.classList.add("active");
+      cards[index].style.display = "block";
+    });
+  });
+});
