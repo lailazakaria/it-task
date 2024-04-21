@@ -1,0 +1,331 @@
+:root {
+  --yellow-dark: #ffd500;
+  --white-color: #ebebeb;
+  --white-opacity: #ffffff;
+  --black-light: #222222;
+  --white-half: #929292;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Roboto"; */
+}
+body {
+  background-color: black;
+}
+.text-yellow {
+  color: #ffd500;
+  font-weight: normal;
+  line-height: 20px;
+}
+.home {
+  background-image: url("assest/home.webp");
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+header ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--white-color);
+}
+.menu-icon {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    font-size: 4rem;
+  }
+  .nav-links {
+    top: 5rem;
+    flex-direction: column;
+    height: 90vh;
+    background-color: var(--black-light);
+    position: absolute;
+    transition: 0.4s;
+    right: 0;
+  }
+  ul li {
+    padding: 1rem 5rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+  header {
+    justify-content: end;
+  }
+}
+@media (max-width: 380px) {
+  .nav-links {
+    width: 100%;
+  }
+  ul li {
+    padding: 0;
+  }
+}
+.home-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-top: 6rem;
+}
+.home-page .left-section {
+  width: 50%;
+}
+.home-page .left-section h1 {
+  color: var(--white-opacity);
+  font-size: 70px;
+  font-weight: 900;
+}
+.home-page .left-section .description {
+  color: var(--white-color);
+}
+.home-page .left-section .text-yellow {
+  font-size: 24px;
+}
+.home-page .left-section button {
+  width: 50%;
+  padding: 1rem;
+  background-color: var(--yellow-dark);
+  color: #ebebeb;
+  border: none;
+  margin-top: 1rem;
+}
+.home-page .right-section .scroll-menu {
+  width: 2.2rem;
+  height: 447px;
+}
+.home-page .right-section .scroll-menu .rectangle {
+  width: 2.3rem;
+  height: 2.3rem;
+  border: 1px solid var(--yellow-dark);
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.4;
+  border-radius: 7px;
+  background: #ffffff;
+}
+
+.home-page .right-section .scroll-menu .rectangle:last-child {
+  margin-top: 3rem;
+}
+.home-page .right-section .scroll-menu .rectangle a {
+  color: var(--yellow-dark);
+}
+@media (max-width: 767px) {
+  .home-page .left-section h1 {
+    font-size: 2.5rem;
+  }
+  .home-page .left-section .description {
+    font-size: 12px;
+  }
+  .home-page .left-section .text-yellow {
+    font-size: 14px;
+  }
+  .home-page .left-section button {
+    width: 70%;
+  }
+}
+.latest-news {
+  margin: 2rem 0;
+}
+.latest-news .title {
+  width: 30%;
+  margin: 0 auto;
+}
+.latest-news .title .border-h1 {
+  border: 3px solid var(--white-color);
+  color: var(--white-color);
+  font-size: 38px;
+  font-weight: bold;
+  border-radius: 2px;
+  text-align: center;
+  position: relative;
+}
+
+.latest-news .title h1::before,
+.latest-news .title h1::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--yellow-dark);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+.latest-news .title h1::before {
+  left: 5px;
+}
+
+.latest-news .title h1::after {
+  right: 5px;
+}
+.latest-news .title h1:hover::before,
+.latest-news .title h1:hover::after {
+  width: 90%;
+  height: 90%;
+  border-radius: 0;
+  z-index: -1;
+}
+
+.latest-news .title p {
+  margin: 0;
+  font-size: 13px;
+}
+@media (max-width: 767px) {
+  .latest-news .title {
+    width: 50%;
+  }
+  .latest-news .title .border-h1 {
+    font-size: 12px;
+  }
+  .latest-news .title h1::before,
+  .latest-news .title h1::after {
+    width: 10px;
+    height: 10px;
+  }
+}
+/* .carousel-item {
+  display: flex;
+} */
+.card {
+  width: 30%;
+  display: inline-block;
+  margin: 0 1.33%;
+  background-color: var(--black-light);
+  border-radius: 1rem;
+}
+.card .card-title {
+  color: var(--white-opacity);
+}
+.card .card-text {
+  color: var(--white-color);
+  font-size: 12px;
+}
+.card-icon {
+  color: var(--white-color);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+.carousel-item .card img {
+  width: 100%;
+  height: 12rem;
+}
+
+.carousel-indicators {
+  bottom: -30px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.carousel-indicators li {
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.carousel-indicators .active {
+  background-color: var(--yellow-dark);
+}
+ol {
+  list-style: none;
+}
+.watch {
+  margin-top: 2rem;
+  text-align: center;
+}
+@media (max-width: 767px) {
+}
+.ranked .winner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: end;
+}
+.ranked .winner > div {
+  width: 30%;
+}
+@media (max-width: 768px) {
+  /* .winner{
+    justify-content:center;
+    align-items: center; */
+  /* } */
+}
+.ranked .winner .image {
+  width: 100%;
+  height: 10rem;
+}
+.ranked .winner .image-center {
+  width: 100%;
+  height: 12rem;
+}
+
+.ranked .winner .image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+.ranked .winner .name {
+  text-align: center;
+  width: 60%;
+  margin: 0.6rem auto;
+  border-radius: 8px;
+  color: var(--white-opacity);
+  background-color: var(--white-half);
+  font-size: 28px;
+  font-weight: 500;
+}
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  background-color: var(--white-half); /* لون الخلفية للأعمدة الثلاثة الأخرى */
+}
+th {
+  background-color: lightgray; /* لون خلفية رؤوس الأعمدة */
+}
+tr td:first-child {
+  background-color: yellow; /* لون خلفية العمود الأول */
+  border: solid 2px var(--black-light); /* إضافة حد للتمييز */
+  width: 1rem;
+}
+/* إزالة الحدود بين الخلايا */
+td {
+  border: none;
+}
+/* إضافة حد فاصل باللون الرمادي بين الصفوف */
+tr + tr td {
+  border-top: solid 2px var(--black-light);
+}
