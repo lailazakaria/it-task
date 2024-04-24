@@ -49,6 +49,11 @@ header ul {
 .menu-icon {
   display: none;
 }
+.close-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 4rem;
+}
 
 @media (max-width: 767px) {
   .menu-icon {
@@ -57,16 +62,14 @@ header ul {
     font-size: 4rem;
   }
   .nav-links {
-    display: none;
     top: 5rem;
     flex-direction: column;
-    height: 95vh;
+    height: 91vh;
     background-color: var(--black-light);
     position: absolute;
     transition: 0.4s;
     right: 0;
     opacity: 0.69;
-
     background: #000000;
   }
   ul li {
@@ -85,11 +88,6 @@ header ul {
   ul li {
     padding: 0;
   }
-}
-.close-icon {
-  display: none;
-  cursor: pointer;
-  font-size: 4rem;
 }
 
 .home-page {
@@ -344,10 +342,16 @@ ol {
 }
 
 .navigation {
+  display: none;
   text-align: center;
   margin-top: 10px;
 }
 
+@media (max-width: 768px) {
+  .navigation {
+    display: block;
+  }
+}
 .circle {
   display: inline-block;
   width: 10px;
