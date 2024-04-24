@@ -17,7 +17,6 @@ body {
 .text-yellow {
   color: #ffd500;
   font-weight: normal;
-  /* line-height: 20px; */
 }
 .home {
   background-image: url("assest/home.webp");
@@ -58,9 +57,10 @@ header ul {
     font-size: 4rem;
   }
   .nav-links {
+    display: none;
     top: 5rem;
     flex-direction: column;
-    height: 90vh;
+    height: 95vh;
     background-color: var(--black-light);
     position: absolute;
     transition: 0.4s;
@@ -86,6 +86,12 @@ header ul {
     padding: 0;
   }
 }
+.close-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 4rem;
+}
+
 .home-page {
   display: flex;
   justify-content: space-between;
@@ -336,11 +342,25 @@ ol {
   height: 100%;
   border-radius: 8px;
 }
-/* {
-  width: 6rem;
-  height: 100%;
-  border-radius: 8px;
-} */
+
+.navigation {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.circle {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--white-half);
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--yellow-dark);
+}
 .ranked .winner .name {
   text-align: center;
   width: 60%;
@@ -409,6 +429,24 @@ tr + tr td {
   height: 100%;
   border-radius: 2rem;
 }
+.right-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.right-section .p_t {
+  position: absolute;
+  width: 90%;
+  padding: 2rem;
+  border-radius: 2rem;
+  background-color: var(--white-opacity);
+  z-index: 99;
+  bottom: 1rem;
+}
+.right-section .p_t p {
+  color: var(--white-color);
+}
 @media (max-width: 768px) {
   .s-shop {
     grid-template-columns: 1fr;
@@ -435,13 +473,15 @@ tr + tr td {
   font-size: 1rem;
   margin-bottom: 0.5rem;
 }
-.download-right button {
+.download-right button,
+.right-section .p_t button {
   padding: 10px 1rem;
   opacity: 0.8;
   border-radius: 4px;
   background-color: var(--yellow-dark);
   color: var(--white-opacity);
   font-size: 12px;
+  border: none;
 }
 .download-right div p {
   font-size: 12px;
